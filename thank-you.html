@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Purchase!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .thank-you {
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .special-offer {
+            background-color: #f7f9fc;
+            border-radius: 10px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .offer-image img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offer-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .offer-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        .timer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        
+        .download-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .offer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .offer-image {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bitcoin-logo.png" alt="Bitcoin Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="thank-you">
+        <div class="container">
+            <h1>Thank You for Your Purchase!</h1>
+            <p class="subtitle">Your copy of "Bitcoin Self-Custody: Your Keys, Your Coins, Your Freedom" is ready for download.</p>
+            
+            <div class="download-section">
+                <h3>Download Your Book</h3>
+                <a href="#" class="btn-primary">Download PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="special-offer">
+        <div class="container">
+            <h2>Special One-Time Offer</h2>
+            <p class="subtitle">This exclusive offer is only available right now!</p>
+            
+            <div class="offer-content">
+                <div class="offer-image">
+                    <img src="images/mini-book-cover.png" alt="Why Not Other Cryptocurrencies? Mini Book Cover">
+                </div>
+                <div class="offer-text">
+                    <h3>Why Not Other Cryptocurrencies?</h3>
+                    <p>Discover why Bitcoin stands apart from thousands of alternative cryptocurrencies. This mini book explores the fundamental issues with altcoins, including:</p>
+                    <ul>
+                        <li>Centralization problems and who really owns altcoins</li>
+                        <li>The myth of technical innovation in cryptocurrency</li>
+                        <li>Common scams and fraudulent schemes in the altcoin space</li>
+                        <li>Why Bitcoin's unique properties make it superior to all alternatives</li>
+                    </ul>
+                    <p class="offer-price">Just $2.99</p>
+                    <a href="#" class="btn-primary">Add to My Order</a>
+                    <p><small>Or <a href="download.html">no thanks, just take me to my download</a></small></p>
+                </div>
+            </div>
+            
+            <div class="timer">
+                This special offer expires in: <span id="countdown">15:00</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Excellion. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer
+        function startCountdown() {
+            let minutes = 15;
+            let seconds = 0;
+            
+            const countdownElement = document.getElementById('countdown');
+            
+            const interval = setInterval(function() {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(interval);
+                        countdownElement.textContent = "Expired";
+                        return;
+                    }
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+                
+                const displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+                const displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+                
+                countdownElement.textContent = displayMinutes + ":" + displaySeconds;
+            }, 1000);
+        }
+        
+        // Start the countdown when the page loads
+        window.onload = startCountdown;
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .download {
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .download-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+        
+        .download-card {
+            background-color: #f7f9fc;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-card img {
+            max-width: 200px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .download-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bitcoin-logo.png" alt="Bitcoin Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="download">
+        <div class="container">
+            <h1>Your Downloads</h1>
+            <p class="subtitle">Thank you for your purchase! Your books are ready for download.</p>
+            
+            <div class="download-cards">
+                <div class="download-card">
+                    <img src="images/book-cover.png" alt="Bitcoin Self-Custody Book Cover">
+                    <h3>Bitcoin Self-Custody</h3>
+                    <p>Your Keys, Your Coins, Your Freedom</p>
+                    <a href="#" class="btn-primary">Download PDF</a>
+                </div>
+                
+                <div class="download-card">
+                    <img src="images/mini-book-cover.png" alt="Why Not Other Cryptocurrencies? Mini Book Cover">
+                    <h3>Why Not Other Cryptocurrencies?</h3>
+                    <p>Understanding the Fundamental Issues with Altcoins</p>
+                    <a href="#" class="btn-primary">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Excellion. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
